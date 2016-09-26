@@ -1,0 +1,5 @@
+Z:\Robin\_task\web\KerobsLibrary\bin\Debug\KerobsLibrary.dll
+Z:\Robin\_task\web\KerobsLibrary\bin\Debug\KerobsLibrary.pdb
+Z:\Robin\_task\web\KerobsLibrary\obj\Debug\KerobsLibrary.dll
+Z:\Robin\_task\web\KerobsLibrary\obj\Debug\KerobsLibrary.pdb
+Z:\Robin\_task\web\KerobsLibrary\obj\Debug\KerobsLibrary.csprojResolveAssemblyReference.cache

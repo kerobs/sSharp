@@ -1,0 +1,60 @@
+﻿@model Web.Models.ViewModels.VMPalendrome
+@using System.Globalization;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    <!-- whatever -->
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)   
+    
+    <div class="forms">
+        <p>Please enter the text to find Palindrome words.</p>
+        <p>example string:  sqrrqabccbatudefggfedvwhijkllkjihxymnnmzpop</p>
+        <fieldset>
+            <legend>Palindrome</legend>
+            <ol class="clearfix">
+                <li>
+                    @Html.TextBoxFor(m => m.InputString, new { placeholder = "Please enter the text here.." })
+                </li>
+            </ol>
+            <input type="submit" value="Submit" />
+        </fieldset>
+        <br />
+        <br />
+        @if (ViewBag.olist != null)
+        {
+            <h2>Result</h2>
+            <br>
+            if (ViewBag.olist.Count == 0)
+            { <p>System cannot find any palindrome text.</p> }
+            else
+            {
+            <p class="btxt"><strong>Here are list of Palindrome text:</strong></p>
+                foreach (var item in ViewBag.olist)
+                {
+            <p><strong>Text :</strong> @item._word, <strong>Index :</strong> @item._position, <strong>Length :</strong> @item._length </p>
+                }
+            }
+        }
+
+        <br />
+        <br />
+        <p style="text-align: right;">
+            -- ROBIN GURUNG
+        </p>
+        <br>
+    </div>
+    
+    
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="/Scripts/jquery.unobtrusive-ajax.js"></script>
+}
